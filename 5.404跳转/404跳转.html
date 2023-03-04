@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404</title>
+</head>
+<body>
+    <p>页面没有找到 5秒钟之后将会带您进入新浪首页！</p>
+    <script>
+        const p = document.querySelector('p')
+        let num = 5
+        let timer = null
+        jump()
+        clearInterval(timer) 
+        function jump() {
+            if(num === 0){
+            window.location = 'http://www.sina.com.cn'
+            clearInterval(timer)
+        } else {
+             p.innerHTML = `页面没有找到${num}秒钟之后将会带您进入新浪首页！`
+             num--
+        }
+        }
+        timer = window.setInterval(jump,1000)
+    </script>
+</body>
+</html>

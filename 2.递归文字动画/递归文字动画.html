@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: cadetblue;
+            text-align: center;
+        }
+        h1 {
+            width: 500px;
+            height: 100px;
+            margin: 200px auto;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1></h1>
+        <p>速度：<input type="number"></p>
+    </div>
+    <script>
+        const input = document.querySelector('input')
+        const h1 = document.querySelector('h1')
+        let str = '吃饭、睡觉、写代码...'
+        let timer
+        let n = 0
+        let len = str.length
+        fn()
+        function fn() {
+            h1.innerHTML = str.slice(0, n)
+            n++
+            if (n > len) {
+                n = ''
+            }
+            setTimeout(fn, 500)
+        }
+    </script>
+</body>
+
+</html>

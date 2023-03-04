@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #button {
+        width: 230px;
+        height: 80px;
+        border-radius: 50px;
+        border: 3px solid black;
+        position: relative;
+      }
+      .indicator {
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+        background-color: #000000;
+        position: absolute;
+      }
+      /* body {
+        transition: 10s;
+      } */
+      i {
+        transition: .7s;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="button">
+      <i class="indicator"></i>
+    </div>
+    <script>
+      const btn = document.querySelector("#button");
+      const qiu = document.querySelector(".indicator");
+      let time = true;
+      btn.addEventListener("click", () => {
+        if (time) {
+          qiu.style.marginLeft = "153px";
+          // 点击过去背景变黑色
+          document.documentElement.style.backgroundColor = "#000";
+          // 球变成白色
+          qiu.style.backgroundColor = "#fff";
+          // 点击边框变白色
+          btn.style.borderColor = "#fff";
+        } else {
+          qiu.style.marginLeft = "0px";
+          // 再次点击让球变成黑色
+          qiu.style.backgroundColor = "#000";
+          btn.style.borderColor = "black";
+          // 再次点击让背景变成白色
+          document.documentElement.style.backgroundColor = "#fff";
+        }
+        time = !time;
+      });
+    </script>
+  </body>
+</html>

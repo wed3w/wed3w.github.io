@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="success"></div>
+    <p>注册成功！您的信息如下：</p>
+    <ul>
+      <li>邮箱地址：xxx@bac.com</li>
+      <li>密码：123456</li>
+      <li>密码：1234567890</li>
+    </ul>
+  </body>
+  <script>
+    const liArr = document.querySelectorAll("li");
+    const queryStr = window.location.search;
+    const arr = queryStr.slice(1).split("&");
+    console.log(arr);
+    let email = arr[0].slice(6);
+    let mima = arr[1].slice(3);
+    let phone = arr[2].slice(6);
+    liArr[0].innerHTML = `邮箱：${email}`
+    liArr[1].innerHTML=`密码：${mima}`
+    liArr[2].innerHTML=`手机号码：${phone}`
+    console.log(email, mima, phone);
+  </script>
+</html>
